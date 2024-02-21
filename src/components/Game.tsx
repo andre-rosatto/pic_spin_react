@@ -16,6 +16,7 @@ export default function Game() {
 		startLevel();
 		resize();
 		return () => window.removeEventListener('resize', resize);
+		// eslint-disable-next-line
 	}, []);
 
 	useEffect(() => {
@@ -23,7 +24,7 @@ export default function Game() {
 		if (levelComplete) {
 			endLevel();
 		}
-	}, [rotations]);
+	}, [rotations, discStatus]);
 
 	const startLevel = () => {
 		const API = 'https://pixabay.com/api/?key=11863427-94c4daac966e6accaf134b1a6&per_page=200&orientation=horizontal&image_type=photo&min_width=600&min_height=600';
