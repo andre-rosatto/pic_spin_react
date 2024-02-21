@@ -4,10 +4,6 @@ Versão em React/Typescript do Pic Spin.
 Pic Spin é um jogo criado em Javascript e utiliza a API do site de fotos Pixabay.
 
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
