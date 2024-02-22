@@ -35,6 +35,11 @@ export default function Game({ imageURL, onNextClick }: {
 		setNextStatus('show');
 	};
 
+	const resize = () => {
+		const viewportWidth = document.documentElement.clientWidth;
+		setWidth(Math.min(viewportWidth * 0.9, 600));
+	};
+
 	const handleDiscRotate = (tier: number, inc: number) => {
 		const newRotations = [...rotations];
 		newRotations[tier] += inc;
@@ -42,11 +47,6 @@ export default function Game({ imageURL, onNextClick }: {
 		if (discStatus === 'enabled' && !newRotations.some(rotation => rotation % 8 !== 0)) {
 			endLevel();
 		}
-	};
-
-	const resize = () => {
-		const viewportWidth = document.documentElement.clientWidth;
-		setWidth(Math.min(viewportWidth * 0.9, 600));
 	};
 
 	const handleNextClick = () => {
@@ -64,8 +64,13 @@ export default function Game({ imageURL, onNextClick }: {
 				width: `${width}px`,
 				backgroundImage: `url('${imageURL}')`,
 				backgroundSize: `auto ${width}px`
-			}}>
-			<div id="next" className={nextStatus} onClick={handleNextClick}></div>
+			}}
+		>
+			<div
+				id="next"
+				className={nextStatus}
+				onClick={handleNextClick}
+			></div>
 			{rotations.map((rotation, idx) => (
 				<Disc
 					key={idx}
