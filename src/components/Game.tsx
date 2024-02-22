@@ -66,11 +66,7 @@ export default function Game({ imageURL, onNextClick }: {
 				backgroundSize: `auto ${width}px`
 			}}
 		>
-			<div
-				id="next"
-				className={nextStatus}
-				onClick={handleNextClick}
-			></div>
+			<div id="next" className={nextStatus} onClick={handleNextClick} ></div>
 			{rotations.map((rotation, idx) => (
 				<Disc
 					key={idx}
